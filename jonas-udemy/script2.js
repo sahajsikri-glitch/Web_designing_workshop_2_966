@@ -10,11 +10,11 @@ console.log(40 + 8 + 23 - 10);
 console.log("Jonas");
 console.log(23);
 
-let firstName = "Matilda";
+let firstname = "Matilda";
 
-console.log(firstName);
-console.log(firstName);
-console.log(firstName);
+console.log(firstname);
+// console.log(firstName);
+// console.log(firstName);
 
 // Variable name conventions
 let jonas_matilda = "JM";
@@ -60,15 +60,15 @@ console.log(typeof null); //this is a bug in js
 let age = 30;
 age = 31;
 
-const birthYear = 1991;
-// birthYear = 1990;
+const birthyear3 = 1991;
+// birthyear3 = 1990;
 // const job;
 
 var job = "programmer";
 job = "teacher";
 
-lastName = "Schmedtmann";
-console.log(lastName);
+let lastname2 = "Schmedtmann";
+console.log(lastname2);
 
 //////////////////////////////////
 // Basic Operators
@@ -82,8 +82,8 @@ console.log(ageJonas * 2, ageJonas / 10, 2 ** 3);
 // 2 ** 3 means 2 * 2 * 2
 
 const firstName = "Jonas";
-const lastName = "Schmedtmann";
-console.log(firstName + " " + lastName);
+const lastname3 = "Schmedtmann";
+console.log(firstName + " " + lastname3);
 
 // Assignment operators
 let x = 10 + 5; // 15
@@ -102,19 +102,19 @@ const isFullAge = ageSarah >= 18;
 console.log(now - 1991 > now - 2018);
 
 //////////////////////////////////
-// Operator Precedence
-const now = 2037;
-const ageJonas = now - 1991;
-const ageSarah = now - 2018;
+// // Operator Precedence
+// const now = 2037;
+// const ageJonas = now - 1991;
+// const ageSarah = now - 2018;
 
-console.log(now - 1991 > now - 2018);
+// console.log(now - 1991 > now - 2018);
 
-let x, y;
-x = y = 25 - 10 - 5; // x = y = 10, x = 10
-console.log(x, y);
+// let x, y;
+// x = y = 25 - 10 - 5; // x = y = 10, x = 10
+// console.log(x, y);
 
-const averageAge = (ageJonas + ageSarah) / 2;
-console.log(ageJonas, ageSarah, averageAge);
+// const averageAge = (ageJonas + ageSarah) / 2;
+// console.log(ageJonas, ageSarah, averageAge);
 
 //////////////////////////////////
 // Coding Challenge #1
@@ -152,17 +152,23 @@ GOOD LUCK 😀
 
 ////////////////////////////////////
 // Strings and Template Literals
-const firstName = "Jonas";
-const job = "teacher";
-const birthYear = 2006;
-const year = 2026;
+const firstname2 = "Jonas";
+const jobs = "teacher";
+const birthyear32 = 2006;
+const years = 2026;
 
 const sahaj =
-  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
-console.log(jonas);
+  "I'm " +
+  firstname2 +
+  ", a " +
+  (years - birthyear3) +
+  " year old " +
+  jobs +
+  "!";
+console.log(sahaj);
 
-const sahajNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
-console.log(jonasNew);
+const sahajNew = `I'm ${firstname2}, a ${year - birthyear3} year old ${jobs}!`;
+console.log(sahajNew);
 
 console.log(`Just a regular string...`);
 
@@ -178,19 +184,19 @@ lines`);
 
 ////////////////////////////////////
 // Taking Decisions: if / else Statements
-const age = 15;
+const age17 = 15;
 
-if (age >= 18) {
+if (age17 >= 18) {
   console.log("Sarah can start driving license");
 } else {
-  const yearsLeft = 18 - age;
+  const yearsLeft = 18 - age17;
   console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
 }
 
-const birthYear = 2012;
+const birthyear4 = 2012;
 
 let century;
-if (birthYear <= 2000) {
+if (birthyear4 <= 2000) {
   century = 20;
 } else {
   century = 21;
@@ -211,22 +217,47 @@ HINT: Use an if/else statement 😉
 GOOD LUCK 😀
 */
 
-const massMark = 78;
-const heightMark = 1.69;
-const massJohn = 92;
-const heightJohn = 1.95;
+// const massMark = 78;
+// const heightMark = 1.69;
+// const massJohn = 92;
+// const heightJohn = 1.95;
 
 // const massMark = 95;
 // const heightMark = 1.88;
 // const massJohn = 85;
 // const heightJohn = 1.76;
 
-const BMIMark = massMark / heightMark ** 2;
-const BMIJohn = massJohn / (heightJohn * heightJohn);
-console.log(BMIMark, BMIJohn);
+// const BMIMark = massMark / heightMark ** 2;
+// const BMIJohn = massJohn / (heightJohn * heightJohn);
+// console.log(BMIMark, BMIJohn);
 
-if (BMIMark > BMIJohn) {
-  console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`);
-} else {
-  console.log(`John's BMI (${BMIJohn}) is higher than Marks's (${BMIMark})!`);
-}
+// if (BMIMark > BMIJohn) {
+//   console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`);
+// } else {
+//   console.log(`John's BMI (${BMIJohn}) is higher than Marks's (${BMIMark})!`);
+// }
+
+////////////////////////////////////
+// Type Conversion and Coercion
+
+// type conversion
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Jonas"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// type coercion
+console.log("I am " + 23 + " years old");
+console.log("23" - "10" - 3); // subtraction me normal mathematics chalegi
+console.log("23" / "2");
+
+let n = "1" + 1; // '11' // addition me concatination karlega bhadwa js and comsider all of it as integer
+
+n = n - 1;
+console.log(n);
+
+////////////////////////////////////
