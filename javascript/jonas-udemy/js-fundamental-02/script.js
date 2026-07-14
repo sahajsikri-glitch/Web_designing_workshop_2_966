@@ -14,6 +14,7 @@ if (hasDriversLicense) console.log("I can drive :D");
 ///////////////////////////////////////
 // Functions
 function logger() {
+  //js syntax me function use hota hai
   console.log("My name is Jonas");
 }
 
