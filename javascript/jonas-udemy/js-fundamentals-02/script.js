@@ -118,6 +118,7 @@ const friend3 = "Peter";
 const friends = ["Michael", "Steven", "Peter"];
 console.log(friends);
 
+//another way of writing arrays
 const y = new Array(1991, 1984, 2008, 2020);
 
 console.log(friends[0]);
@@ -126,17 +127,19 @@ console.log(friends[2]);
 console.log(friends.length);
 console.log(friends[friends.length - 1]);
 
+//array is mmutable
 friends[2] = "Jay";
 console.log(friends);
 // friends = ['Bob', 'Alice']
 
 const firstName = "Jonas";
+// /array can hold different data types of values all at same time
 const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends];
 console.log(jonas);
 console.log(jonas.length);
 
 // Exercise
-const calcAge = function (birthYeah) {
+const calcAge = function (birthYear) {
   return 2037 - birthYeah;
 };
 const years = [1990, 1967, 2002, 2010, 2018];
@@ -155,36 +158,36 @@ console.log(ages);
 
 ///////////////////////////////////////
 // Basic Array Operations (Methods)
-const friends = ["Michael", "Steven", "Peter"];
+// const friends = ["Michael", "Steven", "Peter"];
 
-// Add elements
-const newLength = friends.push("Jay");
-console.log(friends);
-console.log(newLength);
+// // Add elements
+// const newLength = friends.push("Jay");
+// console.log(friends);
+// console.log(newLength);
 
-friends.unshift("John");
-console.log(friends);
+// friends.unshift("John");
+// console.log(friends);
 
-// Remove elements
-friends.pop(); // Last
-const popped = friends.pop();
-console.log(popped);
-console.log(friends);
+// // Remove elements
+// friends.pop(); // Last
+// const popped = friends.pop();
+// console.log(popped);
+// console.log(friends);
 
-friends.shift(); // First
-console.log(friends);
+// friends.shift(); // First
+// console.log(friends);
 
-console.log(friends.indexOf("Steven"));
-console.log(friends.indexOf("Bob"));
+// console.log(friends.indexOf("Steven"));
+// console.log(friends.indexOf("Bob"));
 
-friends.push(23);
-console.log(friends.includes("Steven"));
-console.log(friends.includes("Bob"));
-console.log(friends.includes(23));
+// friends.push(23);
+// console.log(friends.includes("Steven"));
+// console.log(friends.includes("Bob"));
+// console.log(friends.includes(23));
 
-if (friends.includes("Steven")) {
-  console.log("You have a friend called Steven");
-}
+// if (friends.includes("Steven")) {
+//   console.log("You have a friend called Steven");
+// }
 
 ///////////////////////////////////////
 // Coding Challenge #2
