@@ -45,9 +45,38 @@ const restaurant = {
     return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery(obj) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = "20:00", address }) {
     //idhr dekho sir shorthand method
-    console.log(obj);
+    //WHY DESTRUCTURING IN parameter?
+
+    // ANS -> 2 REASONS :
+
+    // 1.Instead of receiving four separate parameters, the function receives
+    // one object and immediately destructures it.
+
+    // Without destructuring
+    // orderDelivery(starterIndex, mainIndex, time, address) {
+    //   console.log(
+    //     `Order received ${this.starterMenu[starterIndex]} of ${this.mainMenu[mainIndex]} at ${time} on ${address}`
+    //   );
+    // }
+    // Call it like this:
+    // restaurant.orderDelivery(2, 0, "22:30", "Delhi");
+
+    // 2. Here you must remember the exact order:
+    // starterIndex
+    // mainIndex
+    // time
+    // address
+
+    // If you accidentally do
+    // restaurant.orderDelivery("Delhi", 2, 0, "22:30");
+
+    // everything gets mixed up
+    // .
+    console.log(
+      `order recieved ${this.starterMenu[starterIndex]} of ${this.mainMenu[mainIndex]} at ${time} on ${address}`,
+    );
   },
   orderPasta: function (ing1, ing2, ing3) {
     console.log(
@@ -151,3 +180,10 @@ const {
   fri: { open: o, close: c },
 } = openingHours;
 console.log(o, c);
+//GETTING VALUES FROM FUNCTION
+restaurant.orderDelivery({
+  time: "20:00",
+  address: "chattisgarh",
+  mainIndex: 2,
+  starterIndex: 1,
+});
