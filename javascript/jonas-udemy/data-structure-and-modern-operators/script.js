@@ -25,7 +25,21 @@ const restaurant = {
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
-
+  //object(rest) me object(openhr) me object(fri,thur) mein fir object(open/close) behenchod
+  openingHours: {
+    thur: {
+      open: 12,
+      close: 12,
+    },
+    fri: {
+      open: 2,
+      close: 8,
+    },
+    sat: {
+      open: 9,
+      close: 12,
+    },
+  },
   order(staterIndex, mainIndex) {
     //idhr dekho sir shorthand method
     return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
@@ -44,7 +58,6 @@ const restaurant = {
     console.log(mainIng);
     console.log(otherIng);
   },
-  openingHours,
 };
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,3 +101,53 @@ console.log(i, j, k);
 
 const [p, q, r] = [2, 3];
 console.log(p, q, r);
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//DESTRUCITNG OBJECTS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//In objects - order of variables doesn't matter
+//MENTOS ZINDAGI
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+//RENAMING VARIABLES(of above restaurant OBJECT)
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+//DEFAULT VALUES
+// WHY DO WE USE THIS? - iN REAL WORLD , we dont have data , we take it from user
+// so , it's preferable to use default values like this !!
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+//MUTATING VARIABLES
+let ab = 111;
+let bc = 829;
+let obj = { ab: 23, bc: 17 };
+({ ab, bc } = obj); //OBJ LITERAL EXPRESSION(we have to wrap this within () otherwise syntax error)
+console.log(obj);
+console.log(ab, bc);
+
+//NESTED OBJECTS
+// const { fri } = restaurant.openingHours;
+// console.log(fri);
+// //IN DESCONSTRUCTING: jitna andr ghusoge utne andr ka maal milega
+const {
+  fri: { open, close },
+} = restaurant.openingHours;
+console.log(open, close);
+
+//if we dont want to use restaurant. so we can declare opening hours variable outside this object
+const { name, openingHours, categories } = restaurant;
+const { fri } = openingHours;
+console.log(fri);
+//EVEN POWERFUL TO MAKE SIMPLIFIED CODE
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
