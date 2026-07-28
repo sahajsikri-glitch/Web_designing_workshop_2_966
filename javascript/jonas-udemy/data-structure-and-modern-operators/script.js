@@ -240,3 +240,48 @@ const restCopy = { ...restaurant };
 restCopy.name = "ristorante";
 console.log(restCopy.name);
 console.log(restaurant.name);
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//THE REST PATTERNS AND PARAMETERS(opposite of spread)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//DESTRUCTING
+//SPREAD: cause RIGHT SIDE OF = operator
+const arr3 = [1, 2, ...[3, 4]];
+console.log(arr3);
+
+//REST : cause LEFT SIDE OF = operator
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(1, 2, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//OBJECTS
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+//function
+const add = function (...numbers) {
+  //rest operator(pack fucn)
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+add(2, 3, 5, 7);
+add(1, 9);
+const x = [2, 9, 5];
+add(...x); //spread operator(unpack func)
+
+// //object-method calling
+restaurant.orderPizza("mushroom", "onion", "olives"); //array me daaldia dono ko
+restaurant.orderPizza("mushroom");
+
+//WHERE IS SPREAD VS REST USE?
+// spread - values seperated by commas
+// res - variables seperated by commas
