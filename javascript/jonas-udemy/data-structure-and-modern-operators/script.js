@@ -187,3 +187,56 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 1,
 });
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//THE SPREAD OPERATOR
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//basic
+const arr = [7, 8, 9];
+console.log(1, 2, arr[0], arr[1], arr[2]);
+console.log(1, 2, ...arr);
+
+//copy array
+const mainMenu2 = [...restaurant.mainMenu, "gnoucchi"];
+console.log(mainMenu2);
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+//ITERABLES = arrays , strings , maps , sets but not objects
+
+//join 2 array
+const menuz = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menuz);
+//unpacking strings
+const str = "sahej";
+console.log(...str, " ");
+const letters = [...str, " "];
+console.log(letters);
+
+//syntax error
+// console.log(`${..str}`)
+
+//function
+const ingredients = [
+  prompt("let's make pasta! -: ingredient-1 ? "),
+  prompt("ingredient-2 ?"),
+  prompt("ingredient-3 ?"),
+];
+console.log(ingredients);
+//way-1
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+//way-2 better (what if we dont know how many ingr he's gonna enter yea?)
+restaurant.orderPasta(...ingredients);
+
+//Iterables : string , map , set ,arrays BUT NOT OBJECTS
+//objects = NOT iterable but spread operator WORKS(IN ES6 UPDATE)
+
+// copy object + doing some additions (without changing prev object)
+const newRest = { foundIn: "1998", ...restaurant, founder: "guissue" };
+console.log(newRest);
+
+//we are making clone of it using spread and its too easy to make WOW!!
+const restCopy = { ...restaurant };
+restCopy.name = "ristorante";
+console.log(restCopy.name);
+console.log(restaurant.name);
