@@ -31,3 +31,51 @@ const { num, position } = player;
 // const { level } = rating;
 console.log(num, position);
 console.log(rename);
+
+//default value prop
+
+//nested destructing
+
+//02.Invent your own mini examples
+
+const cse = {
+  branch: ["ds", "ai", "core"],
+  commonSubjects: ["dstl", "os", "oops", "adv-ds"],
+  sections: {
+    ds: 12,
+    ai: 16,
+    core: 14,
+  },
+  placements: {
+    topCompanies: {
+      ds: "5%",
+      ai: "10%",
+      core: "15%",
+    },
+    avgCompanies: {
+      ds: "30%",
+      ai: "30%",
+      core: "35%",
+    },
+    massRecruiter: {
+      ds: "12%",
+      ai: "25%",
+      core: "17%",
+    },
+    compareBranches({ sections, placements: { Companies } }, branch1, branch2) {
+      (console.log(
+        `${branch1}: ${sections} sections, Top placement: ${topCompanies[branch1]}`,
+      ),
+        console.log(
+          `${branch1}: ${sections} sections, Top placement: ${topCompanies[branch1]}`,
+        ));
+    },
+  },
+};
+cse.compareBranches({
+  sections: "ai",
+  // placements:,
+  branch1: "ai",
+  branch2: "core",
+});
+//basic +renaming
