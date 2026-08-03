@@ -320,3 +320,35 @@ console.log("sahej" && 0);
 // }
 // //way - 02
 // restaurant.orderPizza && restaurant.orderPizza('mushroom', 'onion');
+
+//example-02
+const rest1 = {
+  name: "chaayos",
+  numGUest: 0,
+};
+const rest2 = {
+  owner: "sahej",
+  numGuest: 71,
+};
+rest1.numGUest = rest1.numGUest && 17;
+rest2.numGuest = rest2.numGuest && 14;
+console.log(rest1.numGUest); //falsy hogya mamla shuru me atakgya
+console.log(rest2.numGuest); //real hogya toh mamla aage jaake failgya
+rest1.owner = rest1.owner && "ANONYMOUS";
+rest2.owner = rest2.owner && "ANONYMOUS";
+console.log(rest1);
+console.log(rest2);
+
+// //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// //NULLISH-COALESCING OPERATOR
+// //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// //basic
+// Take 0 and '' as truthy value
+// // restaurant.numGuest = 0;
+// // //(problem we are facing is coz 0 is falsy value acc to || and &&)
+// // const guest = restaurant.numGuest || 69;
+// // console.log(guest);
+// // const guestAlt = restaurant.numGuest ?? 69;
+// // console.log(guestAlt);
+// // const guestAlt2 = 69 ?? restaurant.numGuest;
+// // console.log(guestAlt2);
