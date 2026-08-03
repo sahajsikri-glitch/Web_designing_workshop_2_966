@@ -180,6 +180,7 @@
 //   fri: { open: o, close: c },
 // } = openingHours;
 // console.log(o, c);
+
 // //GETTING VALUES FROM FUNCTION
 // restaurant.orderDelivery({
 //   time: "20:00",
@@ -285,3 +286,37 @@
 // //WHERE IS SPREAD VS REST USE?
 // // spread - values seperated by commas
 // // res - variables seperated by commas
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//SHORT CIRCUITING (&& and ||)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//OR OPERATOR
+//basic
+console.log(3 || "sahej");
+// console.log('' || 'sahej');
+// console.log(true || 0);
+console.log(undefined || null); //bas phela check krunga uske baad jo bhi h idc
+console.log(null || undefined);
+
+//way-01
+const guest1 = restaurant.numGUest ? restaurant.numGuest : 10;
+console.log(guest1);
+
+//way-02(just observe how fast and time saving thing thsis is)
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+
+//AND OPERATOR(works ekdum opp of or operator)
+
+//basic
+console.log(0 && "sahej");
+console.log("sahej" && 0);
+
+//example for better understanding(HOW TO USE)
+//way - 01
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'onion');
+// }
+// //way - 02
+// restaurant.orderPizza && restaurant.orderPizza('mushroom', 'onion');

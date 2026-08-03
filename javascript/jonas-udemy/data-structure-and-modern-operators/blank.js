@@ -33,7 +33,7 @@ console.log(num, position);
 console.log(rename);
 
 //default value prop
-
+const {};
 //nested destructing
 
 //02.Invent your own mini examples
