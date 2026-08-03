@@ -33,7 +33,7 @@ console.log(num, position);
 console.log(rename);
 
 //default value prop
-const {};
+// const {};
 //nested destructing
 
 //02.Invent your own mini examples
@@ -72,10 +72,10 @@ const cse = {
     },
   },
 };
-cse.compareBranches({
-  sections: "ai",
-  // placements:,
-  branch1: "ai",
-  branch2: "core",
-});
+// cse.compareBranches({
+//   sections: "ai",
+//   // placements:,
+//   branch1: "ai",
+//   branch2: "core",
+// });
 //basic +renaming

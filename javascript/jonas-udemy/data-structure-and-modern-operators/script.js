@@ -293,19 +293,19 @@
 
 //OR OPERATOR
 //basic
-console.log(3 || "sahej");
-// console.log('' || 'sahej');
-// console.log(true || 0);
-console.log(undefined || null); //bas phela check krunga uske baad jo bhi h idc
-console.log(null || undefined);
+// console.log(3 || "sahej");
+// // console.log('' || 'sahej');
+// // console.log(true || 0);
+// console.log(undefined || null); //bas phela check krunga uske baad jo bhi h idc
+// console.log(null || undefined);
 
-//way-01
-const guest1 = restaurant.numGUest ? restaurant.numGuest : 10;
-console.log(guest1);
+// //way-01
+// const guest1 = restaurant.numGUest ? restaurant.numGuest : 10;
+// console.log(guest1);
 
-//way-02(just observe how fast and time saving thing thsis is)
-const guest2 = restaurant.numGuest || 10;
-console.log(guest2);
+// //way-02(just observe how fast and time saving thing thsis is)
+// const guest2 = restaurant.numGuest || 10;
+// console.log(guest2);
 
 //AND OPERATOR(works ekdum opp of or operator)
 
@@ -352,3 +352,17 @@ console.log(rest2);
 // // console.log(guestAlt);
 // // const guestAlt2 = 69 ?? restaurant.numGuest;
 // // console.log(guestAlt2);
+
+//LOGICAL ASSIGNMENT OPERATOR
+const res1 = {
+  name: "la pilaaz",
+  nameGuests: 0,
+};
+const res2 = {
+  name: "dominoz",
+  owner: "jethalal",
+};
+rest1.numGuest = rest1.numGUest || 10;
+rest2.numGuest ||= 10;
+
+rest1.numGUest ??= 10;
