@@ -2,92 +2,98 @@
 // //destructing arrays :
 // //why it is used? => to help developers extract multiple properties from objects at once.
 
-// // const weekdays2 = ["mon", "tue", "wed", "thur", "fri", "sat"];
-// // const openingHours = {
-// //   [weekdays2[3]]: {
-// //     //babuni see this
-// //     open: 12,
-// //     close: 22,
-// //   },
-// //   [weekdays2[4]]: {
-// //     //babuni see this
-// //     open: 11,
-// //     close: 23,
-// //   },
-// //   sat: {
-// //     open: 0, // Open 24 hours
-// //     close: 24,
-// //   },
-// // };
-// const restaurant = {
-//   name: "Classico Italiano",
-//   location: "Via Angelo Tavanti 23, Firenze, Italy",
-//   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
-//   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
-//   mainMenu: ["Pizza", "Pasta", "Risotto"],
-//   //object(rest) me object(openhr) me object(fri,thur) mein fir object(open/close) behenchod
-//   openingHours: {
-//     thur: {
-//       open: 12,
-//       close: 12,
-//     },
-//     fri: {
-//       open: 2,
-//       close: 8,
-//     },
-//     sat: {
-//       open: 9,
-//       close: 12,
-//     },
-//   },
-//   order(staterIndex, mainIndex) {
-//     //idhr dekho sir shorthand method
-//     return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
-//   },
+const weekdays2 = ["mon", "tue", "wed", "thur", "fri", "sat"];
+const openingHours = {
+  //ES6 OBJECT LITERAL 03 (can acees array el in objects eg- weekends[2])
+  [weekdays2[3]]: {
+    //babuni see this
+    open: 12,
+    close: 22,
+  },
+  [weekdays2[4]]: {
+    //babuni see this
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+const restaurant = {
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
+  //object(rest) me object(openhr) me object(fri,thur) mein fir object(open/close) behenchod
+  openingHours: {
+    thur: {
+      open: 12,
+      close: 12,
+    },
+    fri: {
+      open: 2,
+      close: 8,
+    },
+    sat: {
+      open: 9,
+      close: 12,
+    },
+  },
 
-//   orderDelivery({ starterIndex = 1, mainIndex = 0, time = "20:00", address }) {
-//     //idhr dekho sir shorthand method
-//     //WHY DESTRUCTURING IN parameter?
+  //ES6 ENHANCED OBJECT LITERAL01
+  openingHours, //dont have to write openinghours:openinghours anymore
 
-//     // ANS -> 2 REASONS :
+  //ES6 ENHANCED OBJECT LITERAL02 (dont have to use func declaration or expr just order() thats it!!)
+  order(staterIndex, mainIndex) {
+    //idhr dekho sir shorthand method
+    return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+  },
 
-//     // 1.Instead of receiving four separate parameters, the function receives
-//     // one object and immediately destructures it.
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = "20:00", address }) {
+    //idhr dekho sir shorthand method
+    //WHY DESTRUCTURING IN parameter?
 
-//     // Without destructuring
-//     // orderDelivery(starterIndex, mainIndex, time, address) {
-//     //   console.log(
-//     //     `Order received ${this.starterMenu[starterIndex]} of ${this.mainMenu[mainIndex]} at ${time} on ${address}`
-//     //   );
-//     // }
-//     // Call it like this:
-//     // restaurant.orderDelivery(2, 0, "22:30", "Delhi");
+    // ANS -> 2 REASONS :
 
-//     // 2. Here you must remember the exact order:
-//     // starterIndex
-//     // mainIndex
-//     // time
-//     // address
+    // 1.Instead of receiving four separate parameters, the function receives
+    // one object and immediately destructures it.
 
-//     // If you accidentally do
-//     // restaurant.orderDelivery("Delhi", 2, 0, "22:30");
+    // Without destructuring
+    // orderDelivery(starterIndex, mainIndex, time, address) {
+    //   console.log(
+    //     `Order received ${this.starterMenu[starterIndex]} of ${this.mainMenu[mainIndex]} at ${time} on ${address}`
+    //   );
+    // }
+    // Call it like this:
+    // restaurant.orderDelivery(2, 0, "22:30", "Delhi");
 
-//     // everything gets mixed up
-//     // .
-//     console.log(
-//       `order recieved ${this.starterMenu[starterIndex]} of ${this.mainMenu[mainIndex]} at ${time} on ${address}`,
-//     );
-//   },
-//   orderPasta: function (ing1, ing2, ing3) {
-//     console.log(
-//       `Here is your delicious pasta with ${ing1} , ${ing2} and ${ing3}`,
-//     );
-//   },
-//   orderPizza: function (mainIng, ...otherIng) {
-//     console.log(mainIng);
-//     console.log(otherIng);
-//   },
-// };
+    // 2. Here you must remember the exact order:
+    // starterIndex
+    // mainIndex
+    // time
+    // address
+
+    // If you accidentally do
+    // restaurant.orderDelivery("Delhi", 2, 0, "22:30");
+
+    // everything gets mixed up
+    // .
+    console.log(
+      `order recieved ${this.starterMenu[starterIndex]} of ${this.mainMenu[mainIndex]} at ${time} on ${address}`,
+    );
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1} , ${ing2} and ${ing3}`,
+    );
+  },
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(otherIng);
+  },
+};
 
 // //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // //DESTRUCITNG ARRAYS
@@ -366,3 +372,34 @@ rest1.numGuest = rest1.numGUest || 10;
 rest2.numGuest ||= 10;
 
 rest1.numGUest ??= 10;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//LOOPING ARRAYS-: THE FOR-OF LOOP
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//basic
+const menu3 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu3) console.log(item);
+
+//FOR ITEMS
+for (const item of menu3) {
+  console.log(item);
+}
+//FOR INDEXES OF ITEM(IN ARRAY)
+for (const item of menu3.entries()) console.log(item);
+//FOR BOTH ITEMS AND INDEXES(SEPERATELY)
+for (const [i, el] of menu3.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//ENHANCED OBJECT LITERALS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//1)shorthand prop names
+console.log(restaurant.openingHours);
+// uppar dehle lawde ke nati
+
+//2)shorthand method definitions
+// basically functions ko alg trike se likhne wala uppar dekhle
+
+//3)computed property names
+//uppar jake dekho bacha kaishe pela dia h (weekdays2) ko
