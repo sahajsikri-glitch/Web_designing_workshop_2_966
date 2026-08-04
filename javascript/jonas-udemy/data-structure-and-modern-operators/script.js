@@ -451,3 +451,32 @@ if (users.length > 0) console.log(users[0].name);
 else {
   console.log("USER ARRAY EMPTY");
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//LOOPING OBJECTS: OBJ KEYS , VALUES , ENTERIES
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//OBJ KEYS(prop name)
+for (const item of Object.keys(openingHours)) {
+  console.log(item);
+}
+const prop = Object.keys(openingHours);
+console.log(prop);
+console.log(`we are open at ${prop.length} days`);
+
+//OBJ VALUES(prop values)
+const values = Object.values(openingHours);
+console.log(values); //ANDAR KA MAAL DEDIA
+
+//OBJ ENTRIES(prop entries)
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+// for (const x of entries) {
+//   console.log(x);
+// }
+
+for (const [key, { open, close }] of entries) {
+  //to use openinghour enteries you have to define like object.enteries
+  console.log(`On ${key}, we open at ${open} and close at ${close}`);
+}
