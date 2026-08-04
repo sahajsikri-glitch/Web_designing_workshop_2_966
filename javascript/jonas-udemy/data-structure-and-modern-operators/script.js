@@ -403,3 +403,51 @@ console.log(restaurant.openingHours);
 
 //3)computed property names
 //uppar jake dekho bacha kaishe pela dia h (weekdays2) ko
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//OPTIONAL CHANGING(?.)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//BASIC
+console.log(restaurant.openingHours.mon); //UNDEFINED
+// console.log(restaurant.openingHours.mon.open); //ERROR(coz undefined ke sath operation mtlb ERROR)
+
+if (restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+} //NOTHING
+if (restaurant.openingHours.fri) {
+  console.log(restaurant.openingHours.fri.open);
+} //11
+
+// WITHOUT OPTIONAL CHAINING
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+if (restaurant.openingHours && restaurant.openingHours.sat) {
+  console.log(restaurant.openingHours.sat.open);
+}
+// console.log(restaurant.openingHours.mon.open); //ERROR
+
+// WITH OPTIONAL CHAINING
+console.log(restaurant.openingHours.mon?.open); //UNDEFINED/NULL(Asking if monday is here)
+
+//EXAMPLE
+const days = ["mon", "tue", "wed", "thur", "fri", "sat", "sun"];
+for (item of days) {
+  console.log(item);
+  const open = restaurant.openingHours[item]?.open ?? "closed";
+  console.log(`ON DAY ${item}, WE OPEN AT ${open}`);
+}
+
+//METHODS
+console.log(restaurant.orderRisotto?.(0, 1) ?? "METHOD DOESNT EXIST");
+console.log(restaurant.order?.(0, 1) ?? "METHOD DOESNT EXIST");
+
+//ARRAYS
+const users = [{ name: "Sahej", email: "Sahajsikri@gmail.com" }];
+// const users = [];
+console.log(users[0]?.name ?? "USER ARRAY EMPTY"); //see how ? and ?? working together
+//iska matlab in if else statement is
+if (users.length > 0) console.log(users[0].name);
+else {
+  console.log("USER ARRAY EMPTY");
+}
