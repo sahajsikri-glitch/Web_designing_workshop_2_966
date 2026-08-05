@@ -269,79 +269,28 @@ const sahaju = {
   //   return 2037 - this.birthYeah;
   // }
 
-  calcAge: function () {
+  calAge() {
+    //ES6 object literal update
+
+    //we can read birthyear directly from obj with the help of this keyword(this manje sahaju here)
     this.age = 2037 - this.birthYeah;
     return this.age;
   },
 
   getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${sahaju.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+    //no more we have to define functions like this
+    return `${this.firstName} is a ${this.calAge()}-year old ${sahaju.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
   },
 };
 
-console.log(sahaju.calcAge());
+console.log(sahaju.calAge());
 
-console.log(sahaju.age);
-console.log(sahaju.age);
+console.log(sahaju.calAge());
 console.log(sahaju.age);
 
-// Challenge
-// "sahaju is a 46-year old teacher, and he has a driver's license"
 console.log(sahaju.getSummary());
 
-///////////////////////////////////////
-// Coding Challenge #3
-
-/*
-Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter)
-
-1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
-2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects). Store the BMI value to a property, and also return it from the method.
-3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
-
-TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
-
-GOOD LUCK 😀
-*/
-
-/*
-const mark = {
-  fullName: 'Mark Miller',
-  mass: 78,
-  height: 1.69,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2;
-    return this.bmi;
-  }
-};
-
-const john = {
-  fullName: 'John Smith',
-  mass: 92,
-  height: 1.95,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2;
-    return this.bmi;
-  }
-};
-
-mark.calcBMI();
-john.calcBMI();
-
-console.log(mark.bmi, john.bmi);
-
-// "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
-
-if (mark.bmi > john.bmi) {
-  console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`)
-} else if (john.bmi > mark.bmi) {
-  console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`)
-}
-
-
-///////////////////////////////////////
 // Iteration: The for Loop
-
 // console.log('Lifting weights repetition 1 🏋️‍♀️');
 // console.log('Lifting weights repetition 2 🏋️‍♀️');
 // console.log('Lifting weights repetition 3 🏋️‍♀️');
@@ -358,16 +307,15 @@ for (let rep = 1; rep <= 30; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
 }
 
-
 ///////////////////////////////////////
 // Looping Arrays, Breaking and Continuing
 const jonas = [
-  'Jonas',
-  'Schmedtmann',
+  "Jonas",
+  "Schmedtmann",
   2037 - 1991,
-  'teacher',
-  ['Michael', 'Peter', 'Steven'],
-  true
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
 ];
 const types = [];
 
@@ -397,30 +345,29 @@ for (let i = 0; i < years.length; i++) {
 console.log(ages);
 
 // continue and break
-console.log('--- ONLY STRINGS ---')
+console.log("--- ONLY STRINGS ---");
 for (let i = 0; i < jonas.length; i++) {
-  if (typeof jonas[i] !== 'string') continue;
+  if (typeof jonas[i] !== "string") continue;
 
   console.log(jonas[i], typeof jonas[i]);
 }
 
-console.log('--- BREAK WITH NUMBER ---')
+console.log("--- BREAK WITH NUMBER ---");
 for (let i = 0; i < jonas.length; i++) {
-  if (typeof jonas[i] === 'number') break;
+  if (typeof jonas[i] === "number") break;
 
   console.log(jonas[i], typeof jonas[i]);
 }
-
 
 ///////////////////////////////////////
 // Looping Backwards and Loops in Loops
 const jonas = [
-  'Jonas',
-  'Schmedtmann',
+  "Jonas",
+  "Schmedtmann",
   2037 - 1991,
-  'teacher',
-  ['Michael', 'Peter', 'Steven'],
-  true
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
 ];
 
 // 0, 1, ..., 4
@@ -437,7 +384,6 @@ for (let exercise = 1; exercise < 4; exercise++) {
     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
   }
 }
-
 
 ///////////////////////////////////////
 // The while Loop
@@ -456,9 +402,8 @@ let dice = Math.trunc(Math.random() * 6) + 1;
 while (dice !== 6) {
   console.log(`You rolled a ${dice}`);
   dice = Math.trunc(Math.random() * 6) + 1;
-  if (dice === 6) console.log('Loop is about to end...');
+  if (dice === 6) console.log("Loop is about to end...");
 }
-*/
 
 ///////////////////////////////////////
 // Coding Challenge #4
