@@ -548,3 +548,41 @@ console.log(symmDifference);
 
 //Disjoint
 console.log(italianFoods.isDisjointFrom(mexicanFoods)); //give boolean value
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//MAPS(key-value pair)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const rest = new Map();
+rest.set("name", "tazaBazar");
+rest.set(1, "france,itlay");
+
+rest
+  .set("categories", ["Italian", "Chinese", "Organic"])
+  .set("open", 11)
+  .set("close", 20)
+  .set(true, "We are open :)")
+  .set(false, "We are close :(");
+
+// to read data from the map (get())
+console.log(res.get("name"));
+console.log(res.get(true));
+
+const time = 7;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+//has()
+rest.has("categories");
+//delete
+res1.delete(2);
+//rest.clear();
+//size();
+rest.size();
+
+rest.set([1, 2], "test");
+rest.get([1, 2]); //undefined
+//better way to use array in maps :
+const arr = [1, 2];
+console.log(rest.set(arr));
+
+//dom manupilation
+rest.set(document.querySelector("h1"), "heading");
