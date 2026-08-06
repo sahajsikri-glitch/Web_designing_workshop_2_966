@@ -480,3 +480,31 @@ for (const [key, { open, close }] of entries) {
   //to use openinghour enteries you have to define like object.enteries
   console.log(`On ${key}, we open at ${open} and close at ${close}`);
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//SETS(iterable)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//basics
+const orderSet = new Set(["pasta", "risotto", "pizza", "pasta", "pizza"]);
+console.log(orderSet);
+console.log([...orderSet]);
+console.log(...orderSet);
+
+//letter spcaing
+console.log(new Set("sahej"));
+console.log(new Set("sahej").size);
+//operations
+console.log(orderSet.size);
+console.log(orderSet.has("pizza")); //true
+console.log(orderSet.add("oats"));
+console.log(orderSet.delete("pasta"));
+console.log(orderSet);
+// console.log(orderSet.clear());//(UNDEFINED-OUTPUT) and ye pura set khaali krdega
+for (const order of orderSet) {
+  console.log(order);
+}
+
+//example(different positions in restaurant)//remove duplicates
+const staff = ["waiter", "chef", "waiter", "manager", "chef"];
+const staffSet = [...new Set(staff)]; //ARRAY TO SET
+console.log(staffSet);
