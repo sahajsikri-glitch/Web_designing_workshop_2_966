@@ -506,7 +506,8 @@ for (const order of orderSet) {
 
 //example(different positions in restaurant)//remove duplicates
 const staff = ["waiter", "chef", "waiter", "manager", "chef"];
-const staffSet = [...new Set(staff)]; //ARRAY TO SET
+//ARRAY TO SET
+const staffSet = [...new Set(staff)];
 console.log(staffSet);
 
 //New Operations to Make Sets Useful!
@@ -531,7 +532,8 @@ const mexicanFoods = new Set([
 //intersection
 const commonFoods = italianFoods.intersection(mexicanFoods);
 console.log(commonFoods); //give output in objects
-console.log([...commonFoods]); //sets to array
+//sets to array
+console.log([...commonFoods]);
 
 //union
 const union = italianFoods.union(mexicanFoods);
@@ -539,7 +541,7 @@ console.log(union);
 
 //difference(A-B OR B-A)
 const difference = italianFoods.difference(mexicanFoods);
-const difference = mexicanFoods.difference(italianFoods);
+// const difference = mexicanFoods.difference(italianFoods);
 console.log(difference);
 
 //symmetric difference(give A + B but not A-common-B)
@@ -575,8 +577,8 @@ rest.has("categories");
 //delete
 res1.delete(2);
 //rest.clear();
-//size();
-rest.size();
+//size;
+rest.size;
 
 rest.set([1, 2], "test");
 rest.get([1, 2]); //undefined
@@ -607,7 +609,7 @@ console.log(hoursMap);
 
 //quiz app
 // console.log(question.get());
-for (const [key, el] of question) {
+for (const [key, values] of question) {
   if (typeof key === "number") {
     console.log(`${key}: ${values}`);
   }

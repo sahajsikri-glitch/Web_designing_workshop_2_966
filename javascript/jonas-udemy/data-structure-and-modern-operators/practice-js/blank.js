@@ -122,3 +122,82 @@ console.log("Qatar:", qatarWin, qatarLost, qatarDraw);
 //   branch2: "core",
 // });
 //basic +renaming
+
+//SET AND MAPS:
+
+//[A]Task 1: Basic Set Practice
+//01. create one set :
+const newSet = new Set(["apple", "mango", "banana", "apple"]);
+console.log(newSet.size);
+
+//02.Check if "JavaScript" exists
+console.log(newSet.has("JavaScript"));
+
+//03.Add one new language
+console.log(newSet.add("python"));
+
+//04.Convert it back to an array
+console.log([...newSet]);
+
+//[B]Task 2: Remove Duplicates (Real-world style)
+const studentIds = [101, 105, 101, 108, 105, 110, 108, 112];
+// Remove the duplicates using a Set and store the unique IDs in a new array.
+
+const uniqueIds = [...new Set(studentIds)];
+
+//[C]Task 3: Basic Map Practice
+// 01.Create a Map of 3 students with this structure:
+// Key → student name (string)
+// Value → their marks (number)
+const studentsMap = new Map();
+studentsMap.set("arman", 32).set("khabib", 100).set("pantaj", 77);
+
+// 02. Add one more student
+studentsMap.set("connor", 56);
+// 03. Get the marks of one student
+studentsMap.get("connor");
+// 04. Check if a student exists
+studentsMap.has("tony");
+// 05. Print the size of the Map
+console.log(studentsMap.size);
+
+// [D] Task 4: Mini Real-world Example (Connect + Own example)
+// Create a Map called restaurantHours with:
+// Key: day name ("mon", "tue", etc.)
+// Value: opening time (e.g. "9am - 10pm")
+
+// Then write a small function that receives a day and tells
+// whether the restaurant is open or not (you can hardcode today’s day for now).
+const restaurantHours = new Map();
+restaurantHours
+  .set("mon", "9am -> 10pm")
+  .set("tue", "9am -> 10pm")
+  .set("Wed", "12am -> 8pm")
+  .set("thur", "9am -> 10pm")
+  .set("fri", "9am -> 10pm")
+  .set("sat", "9am -> 10pm")
+  .set("sun", "closed");
+
+function openDay(day) {
+  restaurantHours.get(day);
+}
+openDay("tue");
+
+//MISTAKES:
+// What’s wrong:
+// Day names are inconsistent ("Wed" has capital W, others are lowercase). This can cause bugs later.
+// Your function does nothing useful:
+function openDay(day) {
+  const hours = restaurantHours.get(day);
+
+  if (hours === "closed") {
+    console.log("Restaurant is closed today");
+  } else if (hours) {
+    console.log(`Restaurant is open: ${hours}`);
+  } else {
+    console.log("Invalid day");
+  }
+}
+
+openDay("tue");
+openDay("sun");
