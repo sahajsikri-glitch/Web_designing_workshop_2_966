@@ -586,3 +586,38 @@ console.log(rest.set(arr));
 
 //dom manupilation
 rest.set(document.querySelector("h1"), "heading");
+
+//Maps :Iteration
+const question = new Map();
+question
+  .set("question", "best programming language in th world?")
+  .set(1, "C++")
+  .set(2, "Java")
+  .set(3, "Java-script")
+  .set("correct", 3)
+  .set(true, "correct 🚀")
+  .set(false, "try again ");
+
+console.log(question);
+
+//convert object to maps :
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//quiz app
+// console.log(question.get());
+for (const [key, el] of question) {
+  if (typeof key === "number") {
+    console.log(`${key}: ${values}`);
+  }
+}
+const answer = Number(prompt("Your answer?"));
+console.log(answer);
+
+console.log(question.get(question.get("correct") === answer));
+
+//converting maps to arrays:
+console.log([...question]);
+console.log([...question.keys()]);
+console.lof([...question.entries()]);
