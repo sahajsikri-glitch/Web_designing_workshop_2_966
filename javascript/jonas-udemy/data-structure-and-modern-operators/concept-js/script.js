@@ -508,3 +508,43 @@ for (const order of orderSet) {
 const staff = ["waiter", "chef", "waiter", "manager", "chef"];
 const staffSet = [...new Set(staff)]; //ARRAY TO SET
 console.log(staffSet);
+
+//New Operations to Make Sets Useful!
+const italianFoods = new Set([
+  "pasta",
+  "gnocchi",
+  "tomatoes",
+  "olive oil",
+  "garlic",
+  "basil",
+]);
+
+const mexicanFoods = new Set([
+  "tortillas",
+  "beans",
+  "rice",
+  "tomatoes",
+  "avocado",
+  "garlic",
+]);
+
+//intersection
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log(commonFoods); //give output in objects
+console.log([...commonFoods]); //sets to array
+
+//union
+const union = italianFoods.union(mexicanFoods);
+console.log(union);
+
+//difference(A-B OR B-A)
+const difference = italianFoods.difference(mexicanFoods);
+const difference = mexicanFoods.difference(italianFoods);
+console.log(difference);
+
+//symmetric difference(give A + B but not A-common-B)
+const symmDifference = italianFoods.symmetricDifference(mexicanFoods);
+console.log(symmDifference);
+
+//Disjoint
+console.log(italianFoods.isDisjointFrom(mexicanFoods)); //give boolean value
