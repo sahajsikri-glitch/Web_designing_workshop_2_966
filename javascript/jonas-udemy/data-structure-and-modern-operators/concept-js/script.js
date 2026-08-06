@@ -621,3 +621,30 @@ console.log(question.get(question.get("correct") === answer));
 console.log([...question]);
 console.log([...question.keys()]);
 console.lof([...question.entries()]);
+
+//WHICH DATASTRUCTURE TO USE ?
+
+// DATA STRUCTURES OVERVIEW
+// ========================
+// SOURCES OF DATA
+// ---------------
+// 1. From the program itself: Data written directly in source code (e.g. status messages)
+// 2. From the UI: Data input from the user or data written in DOM (e.g. tasks in todo app)
+// 3. From external sources: Data fetched for example from web API (e.g. recipe objects)
+//    └─ Application Programming Interface
+//                 |
+//                 v
+//         Collection of data
+//                 |
+//                 v
+//           Data structure
+//            /          \
+//           /            \
+//          /              \
+//  SIMPLE LIST?      KEY/VALUE PAIRS?
+//         |                  |
+//         v                  v
+//  Arrays or Sets      Objects or Maps
+
+// maps-> object alternative
+// use whatever youre comfortable with!
