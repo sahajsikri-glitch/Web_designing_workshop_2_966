@@ -566,8 +566,8 @@ rest
   .set(false, "We are close :(");
 
 // to read data from the map (get())
-console.log(res.get("name"));
-console.log(res.get(true));
+console.log(rest.get("name"));
+console.log(rest.get(true));
 
 const time = 7;
 console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
@@ -575,7 +575,7 @@ console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
 //has()
 rest.has("categories");
 //delete
-res1.delete(2);
+rest.delete(2);
 //rest.clear();
 //size;
 rest.size;
@@ -650,3 +650,31 @@ console.lof([...question.entries()]);
 
 // maps-> object alternative
 // use whatever youre comfortable with!
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//STRINGS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//Part -01
+const airplane = "Tap Air India";
+console.log(airplane[0]);
+console.log(airplane[7]);
+console.log(airplane.length);
+console.log(airplane.indexOf("r"));
+console.log(airplane.lastIndexOf("r"));
+
+console.log(airplane.slice(4));
+console.log(airplane.slice(4, 7));
+console.log(airplane.slice(0, airplane.indexOf(" ")));
+console.log(airplane.slice(-2));
+console.log(airplane.slice(-1, 1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s == "B" || s == "E") {
+    console.log("nobody want this seat");
+  } else {
+    console.log("you got lucky");
+  }
+};
+checkMiddleSeat("11B");
+checkMiddleSeat("12A");
