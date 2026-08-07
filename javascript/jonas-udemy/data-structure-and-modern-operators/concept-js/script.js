@@ -678,3 +678,52 @@ const checkMiddleSeat = function (seat) {
 };
 checkMiddleSeat("11B");
 checkMiddleSeat("12A");
+
+//Part-01 :
+console.log(airplane.toUpperCase());
+
+//Check / comparing E-MAIL :
+const email = "hello@world";
+const loginEmail = "   Hello@WOrld";
+//1st way
+const lowerEmail = loginEmail.toLowerCase();
+const trimmerEmail = lowerEmail.trim(); //remove spaces
+console.log(trimmerEmail);
+
+//2nd way
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+//trimEnd / trimStart - used to trim only white spaces from the end or start
+
+//replacing :
+const priceUS = "288.97$";
+const priceIND = priceUS.replace("$", "rs").replace(".", ",");
+console.log(priceIND);
+
+//replace 1 word occuring multicple times
+const announcement = "hello hello hello hi woowow";
+
+const replaceAnnouncement = announcement.replaceAll("hello", "bye");
+
+//Booleans:
+const plane = "A320neo";
+console.log(plane.includes("A32"));
+
+if (plane.startsWith("A3") && plane.endsWith("neo")) {
+  console.log("bhery good");
+}
+
+//practice exercise :
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes("knife") || baggage.includes("gun")) {
+    console.log("NOT ALLOWED!!");
+  } else {
+    console.log("allowed");
+  }
+};
+
+checkBaggage("I BROUGHT SOME FOOD AND KNIFE WITH ME ");
+checkBaggage("i only have my clothes with me nothing else");
+checkBaggage("i've a gun to protect me");
