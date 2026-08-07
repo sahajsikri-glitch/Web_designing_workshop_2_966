@@ -217,12 +217,63 @@ console.log(str.toUpperCase());
 // 05 : Using slice, extract only your first name
 console.log(str.slice(0, 5));
 // 06 : Check if a string starts with "Java" and ends with "Script" (case-insensitive).
-console.log(str.startsWith("Java"));
-console.log(str.endsWith("script"));
+const testStr = "JavaScript";
+console.log(
+  testStr.toLowerCase().startsWith("java") &&
+    testStr.toLowerCase().endsWith("script"),
+);
 // 07 : Split the string "apple+banana+mango+orange" into an array and then join it back with " | "
-console.log(str.split("+").join("|"));
-
+const fruits = "apple+banana+mango+orange";
+console.log(fruits.split("+").join(" | "));
 //[B]Task 2: Fix & Improve
 // You have this email:
 const email = "   SaHaJ@Email.COM   ";
 const newEmail = email.toLowerCase().trim();
+
+// [C]Task 3: Real-world style
+// Write a function checkPasswordStrength that receives a password (string).
+
+// If the password length is less than 8 → print "Weak password"
+// Otherwise → print "Strong password"
+
+const checkPasswordStrenght = function (password) {
+  if (password.length < 8) {
+    console.log("weak password");
+  } else {
+    console.log("strong password");
+  }
+};
+checkPasswordStrenght("sahhshss");
+
+// [D]Task 4: Mini practical
+// 01. Write a function capitalizeWords that capitalizes the first letter of every word in a sentence.
+
+// Input: "i love learning javascript"
+// Output: "I Love Learning Javascript"
+// const capitalizeWords = function (
+
+// MISTAKES :
+// // there is a cleaner and more modern way using .map().
+// split(" ")                    // turns sentence into array of words
+// .map(word => ...)              // transforms every word
+// .join(" ")                     // turns array back into a sentence
+// Better version (Recommended)JavaScript
+// (TASK 4 - i)
+const capitalizeWords = function (input) {
+  return input
+    .split(" ")
+    .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+};
+
+console.log(capitalizeWords("i love learning javascript"));
+
+//better way (TASK 4 -ii)
+const hideEmail = function (email) {
+  const [username, domain] = email.split("@");
+  const maskedUsername =
+    username[0] + "*".repeat(username.length - 2) + username.slice(-1);
+  return maskedUsername + "@" + domain;
+};
+
+console.log(hideEmail("sahajsikri@gmail.com"));
