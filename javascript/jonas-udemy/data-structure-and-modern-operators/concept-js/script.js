@@ -703,7 +703,6 @@ console.log(priceIND);
 
 //replace 1 word occuring multicple times
 const announcement = "hello hello hello hi woowow";
-
 const replaceAnnouncement = announcement.replaceAll("hello", "bye");
 
 //Booleans:
