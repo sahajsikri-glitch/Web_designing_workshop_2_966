@@ -727,3 +727,34 @@ const checkBaggage = function (items) {
 checkBaggage("I BROUGHT SOME FOOD AND KNIFE WITH ME ");
 checkBaggage("i only have my clothes with me nothing else");
 checkBaggage("i've a gun to protect me");
+
+//working with strings-Part-03:
+console.log("a+very+nice").split("+");
+const [firstNamu, larNamu] = "Sahaj Sikri".split(" ");
+const newName = ["Mr.", firstNamu, larNamu.toUpperCase()].join();
+
+//Caapitialize name :
+// function capitializeName(naam) {
+//   const naam = naam.split();
+// }
+// /
+// /
+// /
+// /
+
+//padding :
+const message = "Go to gate 23";
+console.log(message.padStart(25, "+")); //lenght of entire string should be 25
+console.log("jonas".padStart(25, "+"));
+
+//Hiding digits :
+const maskCreditCard = function (number) {
+  // const str = string(number);
+  const str = number + "";
+  const last = str.slice(-4);
+  return last.padStart(last.length, "*");
+};
+maskCreditCard(2873873289739);
+maskCreditCard("293982932327837874");
+
+//repeat
