@@ -123,9 +123,21 @@
 // // });
 // //basic +renaming
 
+//FOR LOOP-(OF,KEYS(),ENTERIES(),VALUES()):
+// [A]TASK-01 :basic practice set
+// 01.Create an array of your 5 favorite foods. Loop over it using for...of and print each food.
+const food = ["pizza", "momos", "paneer", "eggs", "chicken"];
+for (const item of food) {
+  console.log(item);
+}
+// 02.Using the same array, loop with .entries() and print the index + food in this format: 1: Pizza
+for (const [it, item] of food.entries()) {
+  console.log(`${it + 1}: ${item}`);
+}
+// 03.Create a simple object of a student (name, age, city). Use shorthand property names
 // //SET AND MAPS:
-
 // //[A]Task 1: Basic Set Practice
+
 // //01. create one set :
 // const newSet = new Set(["apple", "mango", "banana", "apple"]);
 // console.log(newSet.size);

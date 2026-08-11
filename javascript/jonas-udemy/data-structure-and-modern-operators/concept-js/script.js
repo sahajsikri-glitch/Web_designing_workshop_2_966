@@ -461,16 +461,16 @@ for (const item of Object.keys(openingHours)) {
   console.log(item);
 }
 const prop = Object.keys(openingHours);
-console.log(prop);
+console.log(prop); //out keys
 console.log(`we are open at ${prop.length} days`);
 
 //OBJ VALUES(prop values)
 const values = Object.values(openingHours);
-console.log(values); //ANDAR KA MAAL DEDIA
+console.log(values); //ANDAR ke andar
 
 //OBJ ENTRIES(prop entries)
 const entries = Object.entries(openingHours);
-console.log(entries);
+console.log(entries); //andar
 
 // for (const x of entries) {
 //   console.log(x);
