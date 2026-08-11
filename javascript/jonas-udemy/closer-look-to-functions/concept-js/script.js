@@ -125,3 +125,18 @@ document.body.addEventListener("click", high5);
 
 //WHY WE USE HIGH-ORDER FUNCTION?
 // IT GIVE OUR CODE ABSTRACTION
+
+//fnction returning function:
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greeterHey = greet("hey");
+greeterHey("jonas");
+greeterHey("sahaj");
+greet("hello")("jonas");
+
+//in arrow function :
+const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
+greetArr("hi")("fuddu");
