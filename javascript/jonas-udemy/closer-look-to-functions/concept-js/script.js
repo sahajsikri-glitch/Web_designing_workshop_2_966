@@ -101,3 +101,27 @@ checkIn(flight, jonas);
 //     return fn(...args);
 //   };
 // }
+
+//Function accepting callback function()
+const firstUpperWord = function (word) {
+  const [first, ...others] = word.split(" ");
+  return [first.toUpperCase(), ...others].join(" ");
+};
+
+//high order function
+const transformer = function (str, fn) {
+  console.log(`original string : ${str}`);
+  console.log(`transformmed string : ${fn(str)}`);
+  console.log(`transformmed by ${fn.name}`);
+};
+transformer("js is best", firstUpperWord);
+
+const high5 = function () {
+  console.log("444");
+};
+document.body.addEventListener("click", high5);
+//here addeventlistener --> is high order function
+// and high5 .appl--> callback function
+
+//WHY WE USE HIGH-ORDER FUNCTION?
+// IT GIVE OUR CODE ABSTRACTION
