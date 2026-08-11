@@ -20,7 +20,7 @@
 // createBooking("LH123", 8, 3);
 // createBooking("LH123", 7);
 
-//how passing arguments works (VLUES VS REFERENCE)
+//how passing arguments works (VaLUES VS REFERENCE)
 const flight = "LH123";
 const jonas = {
   name: "jonas",
